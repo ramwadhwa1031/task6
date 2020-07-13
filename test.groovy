@@ -20,7 +20,7 @@ job('Deployment') {
 			filename=$(basename "$fullfilename")
 			ext="${filename##*.}"
 			echo $ext
-			if [ $ext == html]
+			if [[ $ext == 'html']]
 			then
 			   if sudo kubectl get deployment | grep webserver
 			   then
