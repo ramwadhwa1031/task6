@@ -10,7 +10,7 @@ spec:
 
   template:
     metadata:
-     name: myweb-pod
+     name: myweb-deploy
      labels:
        env: production
        dc: "2"
