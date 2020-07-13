@@ -10,3 +10,17 @@ job('GitHub-Code') {
     }
 
 }
+job('Deployment') {
+	triggers {
+        upstream('GitHub-Code', 'SUCCESS')
+    }
+    
+    steps {
+       shell('fullfilename="/task6/index.html"
+			filename=$(basename "$fullfilename")
+			ext="${filename##*.}"
+			echo $ext')
+    }
+
+}
+
