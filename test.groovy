@@ -56,15 +56,16 @@ job('Testing') {
     
     steps {
        shell('''
-	    status=$(curl -o /dev/null -s "%{http_code}" http://192.168.99.100:32750)
-			if [[$status == 200 ]]
-			then
-			echo "running"
-			sudo python3 /task6/successmail.py
-			else
-			echo "failure"
-			sudo python3 /task6/failuremail.py
-			fi 
+	   status=$(curl -o /dev/null -s -w "%{http_code}" http://192.168.99.100:32750/index.html)
+		if [ $status == 200 ]
+		then
+		echo "running"
+		sudo python3 /task6/successmail.py
+		else
+		echo "failure"
+		sudo python3 /task6/failuremail.py
+		fi 
+          
           ''')
     }
 }
