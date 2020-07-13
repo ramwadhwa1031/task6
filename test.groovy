@@ -79,6 +79,6 @@ buildPipelineView('Devops-Task6') {
     displayedBuilds(1)
     selectedJob('test')
     alwaysAllowManualTrigger()
-    showPipelineParameters()
-    refreshFrequency(60)
+    showPipelineParameters(true)
+    refreshFrequency(1)
 }
