@@ -7,10 +7,10 @@ job('GitHub-Code') {
     }
     steps {
        shell('''
-       sudo cp * -v /task6'
+       sudo cp * -v /task6
        sudo docker build -t d1031/web-server:v1
        sudo docker push d1031/web-server:v1
-       '')
+       ''')
     }
 
 }
