@@ -63,7 +63,7 @@ job('Testing') {
 		sudo python3 /task6/successmail.py
 		else
 		echo "failure"
-		sudo python3 /task6/failuremail.py
+		sudo python3 /task6/failure.py
 		fi 
           
           ''')
