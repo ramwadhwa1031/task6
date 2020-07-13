@@ -3,7 +3,7 @@ job('GitHub-Code') {
         upstream('test', 'SUCCESS')
     }
     scm {
-        github('ramwadhwa1031/DevopsHw', 'master')
+        github('ramwadhwa1031/task6', 'master')
     }
     steps {
        shell('sudo cp * -v /task6')
@@ -16,21 +16,23 @@ job('Deployment') {
     }
     
     steps {
-       shell('''fullfilename="/task6/*.html"
+       shell(''' fullfilename="/task6/*.html"
 			filename=$(basename "$fullfilename")
 			ext="${filename##*.}"
 			echo $ext
-			if [[ $ext == 'html']]
+           
+			if [ $ext == html ];
 			then
-			   if sudo kubectl get deployment | grep webserver
+			   if   kubectl get deployment | grep webserver 
 			   then
-			      echo "it is already running"
+			      kubectl create -f /task6/deployment.yml
 				else
 				  echo "creating"
 				 fi
 			else
 			   echo "everything is wokring"
 			fi	 
+				 
 			''')
     }
 
