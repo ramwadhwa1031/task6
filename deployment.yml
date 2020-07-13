@@ -18,10 +18,10 @@ spec:
     spec:
      containers:
       - name: myweb-con
-        image: d1031/weblaunch:latest	
+        image: d1031/web-server:v1	
         volumeMounts:
           - name: web-vol1
-            mountPath: /etc/prometheus/data
+            mountPath: /var/www/html
      volumes:
       - name: web-vol1
         persistentVolumeClaim:
