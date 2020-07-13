@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: myweb-deploy  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        env: production
+
+  template:
+    metadata:
+     name: myweb-pod
+     labels:
+       env: production
+       dc: "2"
+       region: IN
+    spec:
+     containers:
+      - name: myweb-con
+        image: d1031/weblaunch:latest	
+        volumeMounts:
+          - name: web-vol1
+            mountPath: /etc/prometheus/data
+     volumes:
+      - name: web-vol1
+        persistentVolumeClaim:
+          claimName: deploy-pvc1
