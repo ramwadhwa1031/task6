@@ -1,6 +1,6 @@
 job('GitHub-Code') {
 	triggers {
-        upstream('test', 'SUCCESS')
+        upstream('GrovyScript', 'SUCCESS')
     }
     scm {
         github('ramwadhwa1031/task6', 'master')
