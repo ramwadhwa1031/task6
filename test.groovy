@@ -29,7 +29,7 @@ job('Deployment') {
 			   then
 			      echo "Already Running"
 				else
-				  kubectl create -k /task6/
+				  sudo kubectl create -k /task6/
 				 fi
 				 
 			elif [ $ext == php ];
@@ -39,6 +39,7 @@ job('Deployment') {
 				  echo "Already Running"
 			      
 				else
+				sudo kubectl create -k /task6/
 			  fi	 
 			else
 			   echo "everything is working"
