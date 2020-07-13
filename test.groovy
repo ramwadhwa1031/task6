@@ -16,10 +16,22 @@ job('Deployment') {
     }
     
     steps {
-       shell('''fullfilename="/task6/index.html"
+       shell('''fullfilename="/task6/*.html"
 			filename=$(basename "$fullfilename")
 			ext="${filename##*.}"
-			echo $ext''')
+			echo $ext
+			if [ $ext == html]
+			then
+			   if sudo kubectl get deployment | grep webserver
+			   then
+			      echo "it is already running"
+				else
+				  echo "creating"
+				 fi
+			else
+			   echo "everything is wokring"
+			fi	 
+			''')
     }
 
 }
