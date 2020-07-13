@@ -6,8 +6,8 @@ job('GitHub-Code') {
         github('ramwadhwa1031/task6', 'master')
     }
     steps {
-       shell(''' sudo cp * -v /task6'
-       sudo docker build -t d1031/web-server:v1
+       shell(''' sudo cp * -v /task6
+       sudo docker build -t d1031/web-server:v1 /task6/
        sudo docker push d1031/web-server:v1
        ''')
     }
@@ -66,4 +66,17 @@ job('Testing') {
 			fi 
           ''')
     }
+}
+
+
+
+buildPipelineView('Devops-Task6') {
+    filterBuildQueue()
+    filterExecutors()
+    title('Devops-Task6')
+    displayedBuilds(1)
+    selectedJob('test')
+    alwaysAllowManualTrigger()
+    showPipelineParameters()
+    refreshFrequency(60)
 }
