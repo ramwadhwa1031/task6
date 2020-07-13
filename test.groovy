@@ -25,7 +25,7 @@ job('Deployment') {
            
 			if [ $ext == html ];
 			then
-			   if   kubectl get deployment | grep myweb-deploy 
+			   if  sudo  kubectl get deployment | grep myweb-deploy 
 			   then
 			      echo "Already Running"
 				else
@@ -34,7 +34,7 @@ job('Deployment') {
 				 
 			elif [ $ext == php ];
 			then
-			   if   kubectl get deployment | grep webserver-php 
+			   if  sudo  kubectl get deployment | grep webserver-php 
 			   then
 				  echo "Already Running"
 			      
