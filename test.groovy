@@ -74,11 +74,11 @@ job('Testing') {
 
 buildPipelineView('Devops-Task6') {
     filterBuildQueue(true)
-    filterExecutors()
+    filterExecutors(false)
     title('Devops-Task6')
     displayedBuilds(1)
     selectedJob('test')
-    alwaysAllowManualTrigger()
-    showPipelineParameters(true)
-    refreshFrequency(1)
+    alwaysAllowManualTrigger(false)
+  showPipelineParameters(true)
+  refreshFrequency(20)
 }
