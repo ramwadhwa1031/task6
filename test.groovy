@@ -16,10 +16,10 @@ job('Deployment') {
     }
     
     steps {
-       shell('fullfilename="/task6/index.html"
+       shell('''fullfilename="/task6/index.html"
 			filename=$(basename "$fullfilename")
 			ext="${filename##*.}"
-			echo $ext')
+			echo $ext''')
     }
 
 }
