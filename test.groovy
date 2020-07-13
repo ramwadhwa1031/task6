@@ -73,7 +73,7 @@ job('Testing') {
 
 
 buildPipelineView('Devops-Task6') {
-    filterBuildQueue()
+    filterBuildQueue(true)
     filterExecutors()
     title('Devops-Task6')
     displayedBuilds(1)
