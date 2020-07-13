@@ -1,8 +1,12 @@
-job('example') {
-    
-   
+job('GitHub-Code') {
+	triggers {
+        upstream('test', 'SUCCESS')
+    }
+    scm {
+        github('ramwadhwa1031/DevopsHw.git', 'master')
+    }
     steps {
-       shell('echo Hello World!')
+       shell('sudo cp * -v /task6')
     }
 
 }
