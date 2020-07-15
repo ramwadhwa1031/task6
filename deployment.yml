@@ -18,7 +18,7 @@ spec:
     spec:
      containers:
       - name: myweb-con
-        image: d1031/web-server:latest	
+        image: d1031/myweb:v1
         volumeMounts:
           - name: web-vol1
             mountPath: /var/www/html
